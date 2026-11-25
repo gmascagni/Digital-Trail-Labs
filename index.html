@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        var saved = localStorage.getItem('color-scheme');
+        if (saved === 'light' || saved === 'dark') {
+          document.querySelector('meta[name="color-scheme"]').content = saved;
+        }
+      } catch (e) {}
+    </script>
+    <title>Digital Trail Labs — Enterprise AI &amp; Applied Software Studio</title>
+    <meta
+      name="description"
+      content="Digital Trail Labs is an independent software and AI engineering studio founded by Georgio Mascagni, bridging Fortune 500 IT leadership with AI-native product execution."
+    />
+    <link rel="canonical" href="https://digitaltraillabs.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Digital Trail Labs" />
+    <meta property="og:title" content="Digital Trail Labs — Enterprise AI &amp; Applied Software Studio" />
+    <meta
+      property="og:description"
+      content="14+ shipped applications across Air-Gapped AI, Multi-Agent Telegram Orchestration, Computer Vision, Geospatial Systems, and Native Mobile."
+    />
+    <meta property="og:url" content="https://digitaltraillabs.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

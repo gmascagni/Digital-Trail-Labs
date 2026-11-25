@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* ==========================================================================
+   Color Scheme & Design Tokens (Modern Web Guidance: dark-mode & dark-mode-toggle)
+   ========================================================================== */
+:root {
+  /* Raw Light Tokens */
+  --bg-page-light: #f8fafc;
+  --bg-surface-light: #ffffff;
+  --bg-surface-2-light: #f1f5f9;
+  --bg-elevated-light: rgba(255, 255, 255, 0.85);
+  --border-subtle-light: #e2e8f0;
+  --border-strong-light: #cbd5e1;
+  --text-primary-light: #0f172a;
+  --text-secondary-light: #475569;
+  --text-muted-light: #64748b;
+  --accent-light: #0284c7;
+  --accent-hover-light: #0369a1;
+  --accent-soft-light: rgba(2, 132, 199, 0.1);
+  --emerald-light: #059669;
+  --emerald-soft-light: rgba(5, 150, 105, 0.1);
+  --topo-stroke-light: rgba(15, 23, 42, 0.06);
+  --scrollbar-track-light: #f1f5f9;
+  --scrollbar-thumb-light: #94a3b8;
+
+  /* Raw Dark Tokens */
+  --bg-page-dark: #070b14;
+  --bg-surface-dark: #0f172a;
+  --bg-surface-2-dark: #162033;
+  --bg-elevated-dark: rgba(15, 23, 42, 0.82);
+  --border-subtle-dark: rgba(148, 163, 184, 0.14);
+  --border-strong-dark: rgba(148, 163, 184, 0.28);
+  --text-primary-dark: #f8fafc;
+  --text-secondary-dark: #cbd5e1;
+  --text-muted-dark: #94a3b8;
+  --accent-dark: #38bdf8;
+  --accent-hover-dark: #7dd3fc;
+  --accent-soft-dark: rgba(56, 189, 248, 0.14);
+  --emerald-dark: #34d399;
+  --emerald-soft-dark: rgba(52, 211, 153, 0.14);
+  --topo-stroke-dark: rgba(56, 189, 248, 0.08);
+  --scrollbar-track-dark: #0f172a;
+  --scrollbar-thumb-dark: #475569;
+
+  /* Fallback defaults (light) for browsers without light-dark() */
+  --bg-page: var(--bg-page-light);
+  --bg-surface: var(--bg-surface-light);
+  --bg-surface-2: var(--bg-surface-2-light);
+  --bg-elevated: var(--bg-elevated-light);
+  --border-subtle: var(--border-subtle-light);
+  --border-strong: var(--border-strong-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --text-muted: var(--text-muted-light);
+  --accent: var(--accent-light);
+  --accent-hover: var(--accent-hover-light);
+  --accent-soft: var(--accent-soft-light);
+  --emerald: var(--emerald-light);
+  --emerald-soft: var(--emerald-soft-light);
+  --topo-stroke: var(--topo-stroke-light);
+  --scrollbar-track: var(--scrollbar-track-light);
+  --scrollbar-thumb: var(--scrollbar-thumb-light);
+
+  @media (prefers-color-scheme: dark) {
+    --bg-page: var(--bg-page-dark);
+    --bg-surface: var(--bg-surface-dark);
+    --bg-surface-2: var(--bg-surface-2-dark);
+    --bg-elevated: var(--bg-elevated-dark);
+    --border-subtle: var(--border-subtle-dark);
+    --border-strong: var(--border-strong-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --text-muted: var(--text-muted-dark);
+    --accent: var(--accent-dark);
+    --accent-hover: var(--accent-hover-dark);
+    --accent-soft: var(--accent-soft-dark);
+    --emerald: var(--emerald-dark);
+    --emerald-soft: var(--emerald-soft-dark);
+    --topo-stroke: var(--topo-stroke-dark);
+    --scrollbar-track: var(--scrollbar-track-dark);
+    --scrollbar-thumb: var(--scrollbar-thumb-dark);
+  }
+
+  /* Progressive enhancement with light-dark() */
+  @supports (color: light-dark(white, black)) {
+    --bg-page: light-dark(var(--bg-page-light), var(--bg-page-dark));
+    --bg-surface: light-dark(var(--bg-surface-light), var(--bg-surface-dark));
+    --bg-surface-2: light-dark(var(--bg-surface-2-light), var(--bg-surface-2-dark));
+    --bg-elevated: light-dark(var(--bg-elevated-light), var(--bg-elevated-dark));
+    --border-subtle: light-dark(var(--border-subtle-light), var(--border-subtle-dark));
+    --border-strong: light-dark(var(--border-strong-light), var(--border-strong-dark));
+    --text-primary: light-dark(var(--text-primary-light), var(--text-primary-dark));
+    --text-secondary: light-dark(var(--text-secondary-light), var(--text-secondary-dark));
+    --text-muted: light-dark(var(--text-muted-light), var(--text-muted-dark));
+    --accent: light-dark(var(--accent-light), var(--accent-dark));
+    --accent-hover: light-dark(var(--accent-hover-light), var(--accent-hover-dark));
+    --accent-soft: light-dark(var(--accent-soft-light), var(--accent-soft-dark));
+    --emerald: light-dark(var(--emerald-light), var(--emerald-dark));
+    --emerald-soft: light-dark(var(--emerald-soft-light), var(--emerald-soft-dark));
+    --topo-stroke: light-dark(var(--topo-stroke-light), var(--topo-stroke-dark));
+    --scrollbar-track: light-dark(var(--scrollbar-track-light), var(--scrollbar-track-dark));
+    --scrollbar-thumb: light-dark(var(--scrollbar-thumb-light), var(--scrollbar-thumb-dark));
+  }
+
+  /* Follow system preference by default; mirror <meta name="color-scheme"> override */
+  color-scheme: light dark;
+  accent-color: var(--accent);
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+
+  &:has(> head > meta[name="color-scheme"][content="dark"]) {
+    color-scheme: dark;
+  }
+  &:has(> head > meta[name="color-scheme"][content="light"]) {
+    color-scheme: light;
+  }
+}
+
+/* Explicit fallback overrides when meta is pinned in browsers without light-dark() */
+@supports not (color: light-dark(white, black)) {
+  :root:has(> head > meta[name="color-scheme"][content="dark"]) {
+    --bg-page: var(--bg-page-dark);
+    --bg-surface: var(--bg-surface-dark);
+    --bg-surface-2: var(--bg-surface-2-dark);
+    --bg-elevated: var(--bg-elevated-dark);
+    --border-subtle: var(--border-subtle-dark);
+    --border-strong: var(--border-strong-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --text-muted: var(--text-muted-dark);
+    --accent: var(--accent-dark);
+    --accent-hover: var(--accent-hover-dark);
+    --accent-soft: var(--accent-soft-dark);
+    --emerald: var(--emerald-dark);
+    --emerald-soft: var(--emerald-soft-dark);
+    --topo-stroke: var(--topo-stroke-dark);
+  }
+  :root:has(> head > meta[name="color-scheme"][content="light"]) {
+    --bg-page: var(--bg-page-light);
+    --bg-surface: var(--bg-surface-light);
+    --bg-surface-2: var(--bg-surface-2-light);
+    --bg-elevated: var(--bg-elevated-light);
+    --border-subtle: var(--border-subtle-light);
+    --border-strong: var(--border-strong-light);
+    --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
+    --text-muted: var(--text-muted-light);
+    --accent: var(--accent-light);
+    --accent-hover: var(--accent-hover-light);
+    --accent-soft: var(--accent-soft-light);
+    --emerald: var(--emerald-light);
+    --emerald-soft: var(--emerald-soft-light);
+    --topo-stroke: var(--topo-stroke-light);
+  }
+}
+
+/* Theme toggle icon branching (no JS needed to stay in sync with OS or meta) */
+.theme-toggle-to-light {
+  display: none;
+}
+.theme-toggle-to-dark {
+  display: inline-flex;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(:has(> head > meta[name="color-scheme"][content="light"])) .theme-toggle-to-light {
+    display: inline-flex;
+  }
+  :root:not(:has(> head > meta[name="color-scheme"][content="light"])) .theme-toggle-to-dark {
+    display: none;
+  }
+}
+
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .theme-toggle-to-light {
+  display: inline-flex;
+}
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .theme-toggle-to-dark {
+  display: none;
+}
+
+:root:has(> head > meta[name="color-scheme"][content="light"]) .theme-toggle-to-light {
+  display: none;
+}
+:root:has(> head > meta[name="color-scheme"][content="light"]) .theme-toggle-to-dark {
+  display: inline-flex;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reusable semantic utility surfaces */
+.dtl-surface {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+
+.dtl-surface-2 {
+  background-color: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+}
+
+.dtl-nav {
+  background-color: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: blur(14px);
+}
+
+.dtl-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.dtl-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px -12px rgba(2, 132, 199, 0.18);
+}
+
+.dtl-hero-grid {
+  background-image:
+    radial-gradient(circle at 18% 20%, var(--accent-soft) 0%, transparent 45%),
+    radial-gradient(circle at 82% 15%, var(--emerald-soft) 0%, transparent 40%);
+}
