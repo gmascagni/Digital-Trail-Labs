@@ -106,29 +106,30 @@ export const APPS: AppProject[] = [
   {
     slug: 'gunnies-ballistics',
     name: 'Gunnies Ballistics',
-    tagline: 'Native Android Kotlin & Jetpack Compose 3-DOF+ RK4 ballistics solver with Bushnell BLE rangefinder sync.',
+    tagline: 'Precision Android 3-DOF+ RK4 ballistics solver with 338+ factory profiles, 3-zone wind, true FFP reticles, PRS stage cards, and BLE sync.',
     category: 'Mobile & Media',
     featured: true,
     status: 'Native Android',
-    primaryStack: ['Kotlin', 'Jetpack Compose', 'Bluetooth LE', 'RK4 Physics', 'Open-Meteo API'],
+    primaryStack: ['Kotlin', 'Jetpack Compose', '3-DOF+ RK4', 'Bluetooth LE', 'True FFP Reticles'],
+    liveUrl: 'https://gmascagni.github.io/gunnies/',
     repoUrl: 'https://github.com/gmascagni/gunnies',
     accentFrom: '#f59e0b',
     accentTo: '#ef4444',
     iconName: 'crosshair',
     executiveRecap:
-      'A native Android precision ballistics solver and Bluetooth Low Energy (BLE) companion app for the Bushnell Bone Collector 1800 laser rangefinder. Engineered with Kotlin and Jetpack Compose for both standard handsets and foldable dual-column layouts (Samsung Galaxy Z Fold).',
+      'Gunnies Ballistics is a field-ready Android precision ballistics solver built with Kotlin and Jetpack Compose to run fast and 100% offline. Shooters can build modular rigs from 338+ factory profiles, pull live GPS weather and 3-zone (Near / Mid / Far) terrain wind calls, dial or hold inside illuminated true-to-scale First Focal Plane (FFP) reticles, run multi-target PRS stage cards, generate shareable DOPE tables, and sync over Bluetooth Low Energy (BLE) with Bushnell laser rangefinders.',
     problemStatement:
-      'Field precision computing requires deterministic physics, real-time atmospheric telemetry, and reliable hardware BLE synchronization—all usable under harsh outdoor or night-vision conditions without cloud dependency.',
+      'Long-range precision shooting demands instant elevation clicks, multi-zone terrain wind calls, transonic truing, and hardware BLE rangefinder sync that remain 100% reliable in remote zero-cell-service environments.',
     architectureSummary:
-      'Implements a custom 3-DOF+ 4th-order Runge-Kutta (RK4) trajectory engine in Kotlin supporting G1/G7 drag curves, Coriolis/Eötvös effects, spin drift, and powder temperature sensitivity, paired with a custom BLE serialization layer (:DU, :DD, :BP, :AV protocols) and Open-Meteo GPS weather sync.',
+      'Implements a custom 3-DOF+ 4th-order Runge-Kutta (RK4) trajectory solver in Kotlin supporting G1 & G7 drag curves, Coriolis/Eötvös effects, spin drift, aerodynamic jump, 3-zone wind banding, and powder temperature sensitivity—paired with an adaptive Jetpack Compose UI (phones + foldables), BLE rangefinder protocol serialization, and an interactive 6-chapter web product showcase.',
     highlights: [
-      'Custom O(N) single-pass DOPE range card generator, interactive trajectory drop chart, and bisection MV truing solver.',
-      'Direct Bluetooth Low Energy (BLE) hardware integration serializing 34-field ballistic profiles and parsing live laser range/angle pings.',
-      'Adaptive Jetpack Compose UI designed for foldables, featuring true-scale FFP/SFP reticles, pinch-to-zoom, and Field Dark / OLED Night Red / Daylight themes.',
-      'Modular relational libraries for firearms, optics, ammunition, and suppressors with automatic MOA/MRAD unit matching.',
+      '338+ preloaded factory profiles across independent Firearms, Optics, Ammunition, and Suppressors libraries (with suppressor MV & POI shift modeling).',
+      'Live GPS atmospheric sync (station pressure, density altitude) plus 3-Zone Wind Banding across Near, Mid, and Far terrain corridors.',
+      'True-to-scale illuminated First Focal Plane (FFP) reticles supporting instant toggling between Hold All and Dial Elevation · Hold Wind.',
+      'Multi-target PRS Match Stage Cards, single-pass O(N) shareable DOPE tables, bisection MV/transonic drop truing, and Bushnell Bone Collector 1800 BLE sync.',
     ],
     enterpriseTakeaway:
-      'Proves full-stack technical depth beyond web apps—delivering native Android mobile software, hardware BLE protocols, and numerical physics modeling.',
+      'Proves full-stack engineering range—combining native Kotlin/Compose mobile UX, numerical RK4 physics, hardware BLE telemetry, and high-craft product launch storytelling.',
   },
   {
     slug: 'mtb-trail-status',

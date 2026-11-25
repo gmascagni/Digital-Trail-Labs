@@ -16,6 +16,7 @@ import { ATMOSPHERE_PRESETS, useAtmosphere } from '../context/AtmosphereContext'
 import { HeroStage3D } from '../components/HeroStage3D';
 import { BrewSandboxCard } from '../components/BrewSandboxCard';
 import { LooseLeafSandboxCard } from '../components/LooseLeafSandboxCard';
+import { GunniesSandboxCard } from '../components/GunniesSandboxCard';
 import { TiltExperimentCard } from '../components/TiltExperimentCard';
 import { AppIcon } from '../components/AppIcon';
 import { playDetentClick } from '../utils/tactileAudio';
@@ -39,7 +40,7 @@ export function HomePage() {
   const labExperiments = useMemo(
     () =>
       APPS.filter((a) =>
-        ['trailvault-enterprise', 'agentbridge-autonomous-hub', 'gunnies-ballistics'].includes(
+        ['trailvault-enterprise', 'agentbridge-autonomous-hub', 'mtb-trail-status'].includes(
           a.slug,
         ),
       ),
@@ -246,7 +247,10 @@ export function HomePage() {
           {/* Card 2 (5 cols): Loose-Leaf Thermal Slider + Liquor Chromaticity */}
           <LooseLeafSandboxCard />
 
-          {/* Row 2 (3 x 4 cols): 3D Perspective Tilt R&D & AI Experiments */}
+          {/* Card 3 (12 cols): Gunnies Ballistics Live FFP Reticle & 3-Zone Solver */}
+          <GunniesSandboxCard />
+
+          {/* Row 3 (3 x 4 cols): 3D Perspective Tilt R&D & AI Experiments */}
           {labExperiments.map((exp, idx) => (
             <TiltExperimentCard key={exp.slug} app={exp} index={idx} />
           ))}

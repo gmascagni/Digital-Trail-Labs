@@ -13,6 +13,8 @@ import {
 } from 'lucide-react';
 import { APPS, getAppBySlug } from '../data/apps';
 import { AppIcon } from '../components/AppIcon';
+import { GunniesSandboxCard } from '../components/GunniesSandboxCard';
+import { GunniesWalkthroughCinema } from '../components/GunniesWalkthroughCinema';
 
 export function AppDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -133,6 +135,16 @@ export function AppDetailPage() {
           </div>
         </div>
       </section>
+
+      {/* Interactive Gunnies Ballistics Showcase (Walkthrough Cinema + Live FFP Solver) */}
+      {app.slug === 'gunnies-ballistics' && (
+        <>
+          <GunniesWalkthroughCinema />
+          <div className="mt-8">
+            <GunniesSandboxCard compact />
+          </div>
+        </>
+      )}
 
       {/* Case Study Content Grid */}
       <div className="mt-8 grid gap-6 md:grid-cols-2">
