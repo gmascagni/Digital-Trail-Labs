@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { AtmosphereProvider } from './context/AtmosphereContext';
 import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
 import { AppDetailPage } from './pages/AppDetailPage';
@@ -10,7 +11,7 @@ function RouteEffects() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
     if (pathname === '/founder') {
       document.title = 'Georgio Mascagni — Founder & Executive Resume | Digital Trail Labs';
@@ -21,7 +22,7 @@ function RouteEffects() {
         ? `${app.name} — Digital Trail Labs`
         : 'Application — Digital Trail Labs';
     } else {
-      document.title = 'Digital Trail Labs — Enterprise AI & Applied Software Studio';
+      document.title = 'Digital Trail Labs — Avant-Garde Product & AI Telemetry Studio';
     }
   }, [pathname]);
 
@@ -30,16 +31,18 @@ function RouteEffects() {
 
 export function App() {
   return (
-    <BrowserRouter>
-      <RouteEffects />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/apps/:slug" element={<AppDetailPage />} />
-          <Route path="/founder" element={<FounderPage />} />
-          <Route path="*" element={<HomePage />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <AtmosphereProvider>
+      <BrowserRouter>
+        <RouteEffects />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/apps/:slug" element={<AppDetailPage />} />
+            <Route path="/founder" element={<FounderPage />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </AtmosphereProvider>
   );
 }

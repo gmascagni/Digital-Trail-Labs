@@ -73,7 +73,7 @@ export function FounderPage() {
               href={FOUNDER.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-sky-500"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-primary)] px-4 py-2.5 font-mono text-xs font-bold text-slate-950 transition-transform hover:scale-105"
             >
               <Linkedin className="h-4 w-4" aria-hidden="true" />
               LinkedIn Profile

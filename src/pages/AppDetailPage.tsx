@@ -97,7 +97,7 @@ export function AppDetailPage() {
               href={app.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-sky-500"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-primary)] px-5 py-2.5 font-mono text-xs font-bold text-slate-950 shadow-xs transition-transform hover:scale-105"
             >
               Launch Live Application
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
