@@ -122,7 +122,7 @@ export function HeroDeviceShowcase() {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#090D16]/85 via-[#090D16]/35 to-transparent" />
 
-              <div className="absolute bottom-4 left-4 right-36 sm:bottom-5 sm:left-5">
+              <div className="absolute bottom-4 left-4 right-40 sm:bottom-5 sm:left-5 sm:right-48">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/20 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-amber-300 border border-amber-400/30">
                   <Crosshair className="h-3 w-3" aria-hidden="true" />
                   338+ Factory Profiles · 100% Offline
