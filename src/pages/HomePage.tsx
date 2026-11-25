@@ -14,6 +14,7 @@ import { BrewSandboxCard } from '../components/BrewSandboxCard';
 import { LooseLeafSandboxCard } from '../components/LooseLeafSandboxCard';
 import { GunniesSandboxCard } from '../components/GunniesSandboxCard';
 import { TiltExperimentCard } from '../components/TiltExperimentCard';
+import { HeroDeviceShowcase } from '../components/HeroDeviceShowcase';
 import { AppIcon } from '../components/AppIcon';
 
 export function HomePage() {
@@ -74,47 +75,55 @@ export function HomePage() {
           />
         </svg>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--accent-primary)]">
-              Digital Trail Labs · Software &amp; Applied AI Studio · Atlanta, GA
-            </p>
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="grid items-center gap-10 lg:grid-cols-12">
+            {/* Left 6 Cols: Executive Positioning */}
+            <div className="lg:col-span-6">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--accent-primary)]">
+                Digital Trail Labs · Software &amp; Applied AI Studio · Atlanta, GA
+              </p>
 
-            <h1 className="mt-4 font-[var(--font-grotesk)] text-4xl font-bold tracking-tight text-[var(--text-main)] sm:text-5xl lg:text-6xl">
-              Enterprise IT Leadership Meets{' '}
-              <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
-                Hands-On AI Execution.
-              </span>
-            </h1>
+              <h1 className="mt-4 font-[var(--font-grotesk)] text-4xl font-bold tracking-tight text-[var(--text-main)] sm:text-5xl">
+                Enterprise IT Leadership Meets{' '}
+                <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
+                  Hands-On AI Execution.
+                </span>
+              </h1>
 
-            <p className="mt-6 text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
-              Founded by{' '}
-              <Link
-                to="/founder"
-                className="font-semibold text-[var(--accent-primary)] hover:underline"
-              >
-                Georgio Mascagni
-              </Link>
-              , Digital Trail Labs pairs 25+ years of Fortune 500 platform leadership with 14+
-              shipped web, native Android, air-gapped AI, and autonomous multi-agent applications.
-            </p>
+              <p className="mt-5 text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
+                Founded by{' '}
+                <Link
+                  to="/founder"
+                  className="font-semibold text-[var(--accent-primary)] hover:underline"
+                >
+                  Georgio Mascagni
+                </Link>
+                , Digital Trail Labs pairs 25+ years of Fortune 500 platform leadership with 14+
+                shipped web, native Android, air-gapped AI, and autonomous multi-agent applications.
+              </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3.5">
-              <a
-                href="#applications"
-                className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-sky-500"
-              >
-                Explore All {APPS.length} Applications
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </a>
+              <div className="mt-7 flex flex-wrap items-center gap-3.5">
+                <a
+                  href="#applications"
+                  className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-sky-500"
+                >
+                  Explore All {APPS.length} Applications
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
 
-              <Link
-                to="/founder"
-                className="dtl-surface inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-[var(--text-main)] transition-colors hover:border-[var(--accent-primary)]"
-              >
-                <Briefcase className="h-4 w-4 text-[var(--accent-primary)]" aria-hidden="true" />
-                Founder &amp; Executive Resume
-              </Link>
+                <Link
+                  to="/founder"
+                  className="dtl-surface inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-[var(--text-main)] transition-colors hover:border-[var(--accent-primary)]"
+                >
+                  <Briefcase className="h-4 w-4 text-[var(--accent-primary)]" aria-hidden="true" />
+                  Founder &amp; Executive Resume
+                </Link>
+              </div>
+            </div>
+
+            {/* Right 6 Cols: Live Multi-Device Product Showcase */}
+            <div className="lg:col-span-6">
+              <HeroDeviceShowcase />
             </div>
           </div>
 
