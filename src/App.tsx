@@ -22,7 +22,7 @@ function RouteEffects() {
         ? `${app.name} — Digital Trail Labs`
         : 'Application — Digital Trail Labs';
     } else {
-      document.title = 'Digital Trail Labs — Avant-Garde Product & AI Telemetry Studio';
+      document.title = 'Digital Trail Labs — Enterprise IT Leadership & Applied AI Studio';
     }
   }, [pathname]);
 

@@ -4,7 +4,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import type { AppProject } from '../data/apps';
 import { AppIcon } from './AppIcon';
 
-export function TiltExperimentCard({ app, index }: { app: AppProject; index: number }) {
+export function TiltExperimentCard({ app }: { app: AppProject; index?: number }) {
   const cardRef = useRef<HTMLElement | null>(null);
   const [transformStyle, setTransformStyle] = useState<string>(
     'perspective(1000px) rotateX(0deg) rotateY(0deg)',
@@ -59,12 +59,12 @@ export function TiltExperimentCard({ app, index }: { app: AppProject; index: num
       <div className="relative z-10">
         <div className="flex items-start justify-between gap-3">
           <AppIcon name={app.iconName} from={app.accentFrom} to={app.accentTo} />
-          <span className="dtl-telemetry rounded-full border border-[var(--border-specular)] px-2.5 py-1 text-[10px] text-[var(--accent-telemetry)]">
-            LAB // 0{index + 1}
+          <span className="dtl-surface-2 rounded-full px-2.5 py-1 text-[11px] font-medium text-[var(--text-muted)]">
+            {app.status}
           </span>
         </div>
 
-        <h3 className="mt-4 font-[var(--font-display)] text-xl font-bold tracking-tight text-[var(--text-main)]">
+        <h3 className="mt-4 font-[var(--font-grotesk)] text-lg font-bold tracking-tight text-[var(--text-main)]">
           <Link to={`/apps/${app.slug}`} className="hover:text-[var(--accent-primary)]">
             {app.name}
           </Link>
@@ -87,9 +87,9 @@ export function TiltExperimentCard({ app, index }: { app: AppProject; index: num
       <div className="relative z-10 mt-6 flex items-center justify-between border-t border-[var(--border-specular)] pt-4">
         <Link
           to={`/apps/${app.slug}`}
-          className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[var(--accent-primary)] hover:underline"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent-primary)] hover:underline"
         >
-          OPEN DOSSIER
+          Application Recap
           <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
         </Link>
         {app.liveUrl && (
@@ -97,9 +97,9 @@ export function TiltExperimentCard({ app, index }: { app: AppProject; index: num
             href={app.liveUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1 font-mono text-[11px] text-[var(--text-muted)] hover:text-[var(--text-main)]"
+            className="inline-flex items-center gap-1 text-xs text-[var(--text-muted)] hover:text-[var(--text-main)]"
           >
-            LIVE
+            Live
             <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </a>
         )}

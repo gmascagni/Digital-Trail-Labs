@@ -118,10 +118,10 @@ export function LooseLeafSandboxCard() {
               <Leaf className="h-4 w-4" aria-hidden="true" />
             </span>
             <div>
-              <span className="dtl-telemetry block text-[var(--accent-telemetry)]">
-                FLAGSHIP 02 // BOTANICAL THERMODYNAMICS
+              <span className="block text-xs font-semibold uppercase tracking-wider text-[var(--accent-telemetry)]">
+                Specialty Tea Guide
               </span>
-              <h3 className="font-[var(--font-display)] text-2xl font-extrabold tracking-tight text-[var(--text-main)]">
+              <h3 className="font-[var(--font-grotesk)] text-xl font-bold tracking-tight text-[var(--text-main)] sm:text-2xl">
                 Loose-Leaf
               </h3>
             </div>
@@ -179,7 +179,7 @@ export function LooseLeafSandboxCard() {
                   />
                 </svg>
                 <p className="font-mono text-[10px] text-slate-400 truncate">
-                  UMAMI INDEX // {profile.umami}
+                  Umami Score: {profile.umami}%
                 </p>
               </div>
             </div>
@@ -228,15 +228,15 @@ export function LooseLeafSandboxCard() {
       <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--border-specular)] pt-4">
         <Link
           to="/apps/loose-leaf"
-          className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[var(--accent-telemetry)] hover:underline"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent-telemetry)] hover:underline"
         >
-          INSPECT ARCHITECTURE RECAP →
+          Application Recap →
         </Link>
         <a
           href="https://loose-leaf.thebrew.app"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1 font-mono text-xs text-[var(--text-secondary)] hover:text-[var(--text-main)]"
+          className="inline-flex items-center gap-1 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-main)]"
         >
           loose-leaf.thebrew.app
           <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />

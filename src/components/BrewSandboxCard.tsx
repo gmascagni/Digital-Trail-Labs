@@ -108,12 +108,12 @@ export function BrewSandboxCard() {
 
   const stageLabel =
     seconds === 0
-      ? 'READY // SWEET-SPOT CALIBRATION'
+      ? 'Ready to Brew'
       : seconds <= 35
-        ? 'PHASE 01 // CO₂ DEGASSING BLOOM'
+        ? 'Phase 1 · Bloom'
         : seconds <= 125
-          ? 'PHASE 02 // SPIRAL TURBULENCE POUR'
-          : 'PHASE 03 // THERMAL DRAWDOWN';
+          ? 'Phase 2 · Spiral Pour'
+          : 'Phase 3 · Drawdown';
 
   const knobAngle = -120 + (ratioIndex / (RATIOS.length - 1)) * 240;
 
@@ -136,10 +136,10 @@ export function BrewSandboxCard() {
               <Coffee className="h-4 w-4" aria-hidden="true" />
             </span>
             <div>
-              <span className="dtl-telemetry block text-[var(--accent-primary)]">
-                FLAGSHIP 01 // PRECISION EXTRACTION
+              <span className="block text-xs font-semibold uppercase tracking-wider text-[var(--accent-primary)]">
+                Specialty Coffee Platform
               </span>
-              <h3 className="font-[var(--font-display)] text-2xl font-extrabold tracking-tight text-[var(--text-main)]">
+              <h3 className="font-[var(--font-grotesk)] text-xl font-bold tracking-tight text-[var(--text-main)] sm:text-2xl">
                 The Brew App
               </h3>
             </div>
@@ -360,15 +360,15 @@ export function BrewSandboxCard() {
       <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--border-specular)] pt-4">
         <Link
           to="/apps/the-brew-app"
-          className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[var(--accent-primary)] hover:underline"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--accent-primary)] hover:underline"
         >
-          INSPECT ARCHITECTURE RECAP →
+          Application Recap →
         </Link>
         <a
           href="https://thebrew.app"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1 font-mono text-xs text-[var(--text-secondary)] hover:text-[var(--text-main)]"
+          className="inline-flex items-center gap-1 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-main)]"
         >
           thebrew.app
           <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />

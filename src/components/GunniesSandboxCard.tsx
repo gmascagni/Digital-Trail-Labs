@@ -125,10 +125,10 @@ export function GunniesSandboxCard({ compact = false }: { compact?: boolean }) {
             className="h-11 w-11 rounded-2xl border border-amber-400/30 object-cover shadow-md"
           />
           <div>
-            <span className="dtl-telemetry block text-[var(--accent-primary)]">
-              FLAGSHIP 03 // ANDROID KOTLIN 3-DOF+ RK4 FIELD SOLVER &amp; BLE SYNC
+            <span className="block text-xs font-semibold uppercase tracking-wider text-[var(--accent-primary)]">
+              Android Precision Ballistics &amp; BLE Sync
             </span>
-            <h3 className="font-[var(--font-display)] text-2xl font-extrabold tracking-tight text-[var(--text-main)] sm:text-3xl">
+            <h3 className="font-[var(--font-grotesk)] text-2xl font-bold tracking-tight text-[var(--text-main)] sm:text-3xl">
               Gunnies Ballistics
             </h3>
           </div>
@@ -180,9 +180,9 @@ export function GunniesSandboxCard({ compact = false }: { compact?: boolean }) {
         {/* Left 5 cols: Illuminated True-to-Scale FFP Scope Viewport */}
         <div className="dtl-surface flex flex-col justify-between rounded-2xl p-4 lg:col-span-5">
           <div className="flex items-center justify-between font-mono text-[10px] text-[var(--text-muted)]">
-            <span>OPTIC // TRUE FFP MRAD TREE</span>
+            <span>True FFP MRAD Reticle</span>
             <span className="text-[var(--accent-telemetry)]">
-              TARGET {rangeYd} YD · WIND {windMph} MPH →
+              {rangeYd} yd · {windMph} mph Wind
             </span>
           </div>
 
@@ -457,16 +457,16 @@ export function GunniesSandboxCard({ compact = false }: { compact?: boolean }) {
                   href="https://gmascagni.github.io/gunnies/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full bg-[var(--accent-primary)] px-4 py-2 font-mono text-xs font-bold text-slate-950 transition-transform hover:scale-105"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-sky-600 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-sky-500"
                 >
-                  LAUNCH GUNNIES SITE
+                  Launch Gunnies Site
                   <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>
                 <Link
                   to="/apps/gunnies-ballistics"
-                  className="dtl-surface-2 inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-mono text-xs font-semibold text-[var(--text-main)] hover:border-[var(--accent-primary)]"
+                  className="dtl-surface-2 inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-xs font-semibold text-[var(--text-main)] hover:border-[var(--accent-primary)]"
                 >
-                  APP DOSSIER →
+                  Application Recap →
                 </Link>
               </div>
             </div>
